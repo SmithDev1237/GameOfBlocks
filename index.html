@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Game of blocks</title>
+<script src="sprite.js" type="text/javascript"></script>
+<script src="Back.js" type="text/javascript"></script>
+<script src="Terrain.js" type="text/javascript"></script>
+<script src="Water.js" type="text/javascript"></script>
+<script src="script.js" type="text/javascript"></script>
+<style type="text/css">
+body{ margin:auto; text-align:center; background-color:#000;}
+canvas { margin:auto; position:absolute; top:0px; left:0px;}
+#gamearea{margin:auto; width:1000px; height:640px; position:relative; overflow:hidden;}
+#menu   {width:200px; height:640px; background:rgba(99,99,99,.5); z-index:200; position:absolute; top:0px; right:-200px;}
+#myCanvasback {background-color:#009966; background-color:#1E90FF;}
+#myCanvas{z-index:100;}
+    #menuTitle
+    {
+        background-color: red;
+        width: 30px;
+        height: 30px;
+        position:relative;
+        left:-30px;
+        padding-top:10px;
+        font-weight:bold;
+    }
+    #menuTitle a{
+        width: 100%;
+        height:100%;
+        display:block;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        font-size: large;
+    }
+    #menuArea
+    {
+        position:relative;
+        top: -30px;
+    }
+
+        .block
+        {
+            width: 16px;
+            height:16px;
+            margin:5px;
+            float:left;
+            overflow:hidden;
+            cursor: pointer;
+        }
+
+        .largeBlock{
+
+            height:16px;
+            margin:5px;
+            float:left;
+            background-color: white;
+            line-height: 16px;
+        }
+
+        .largeBlock p{
+            padding:0px;
+            margin: 0px;
+            cursor: pointer;
+        }
+
+        
+
+</style>
+</head> 
+
+<body onload="init();">
+<div id="gamearea">
+<canvas width="1000" height="640"  id="myCanvasback"></canvas>
+<canvas width="1000" height="640"  id="myCanvas" onClick="showCoordinates(event, this);"></canvas>
+<div id="menu">
+    <div id="menuTitle"><a href="#" onclick="toggleMenu();">+</a></div>
+    <div id="menuArea"></div>
+</div>
+</div>
+
+</body>
+</html>
